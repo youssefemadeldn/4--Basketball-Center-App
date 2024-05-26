@@ -1,6 +1,8 @@
-class ACounterIncrementStat {}
+abstract class CounterState {}
 
-class BCounterIncrementStat {}
+class ACounterIncrementStat extends CounterState {}
+
+class BCounterIncrementStat extends CounterState {}
 
 
 
