@@ -1,4 +1,7 @@
+import 'package:basketball/cubit/counter_cubit.dart';
+import 'package:basketball/cubit/counter_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(PointsCounter());
@@ -9,9 +12,12 @@ class PointsCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    return BlocProvider(
+      create: (context) => CounterCubit(InitialCounterState()),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
     );
   }
 }
