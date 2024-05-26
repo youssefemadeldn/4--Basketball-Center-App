@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PointsCounter());
+  runApp(PointsCounter());
 }
 
-class PointsCounter extends StatefulWidget {
+class PointsCounter extends StatelessWidget {
   const PointsCounter({super.key});
-
-  @override
-  State<PointsCounter> createState() => _PointsCounterState();
-}
-
-class _PointsCounterState extends State<PointsCounter> {
-  int teamAPoints = 0;
-
-  int teamBPoints = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +34,14 @@ class _PointsCounterState extends State<PointsCounter> {
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      '$teamAPoints',
-                      style: const TextStyle(
+                    const Text(
+                      '0',
+                      style: TextStyle(
                         fontSize: 160,
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamAPoints++;
-                        });
-                        print('one point $teamAPoints');
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -72,11 +58,7 @@ class _PointsCounterState extends State<PointsCounter> {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamAPoints += 2;
-                        });
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -93,11 +75,7 @@ class _PointsCounterState extends State<PointsCounter> {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamAPoints += 3;
-                        });
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -130,18 +108,14 @@ class _PointsCounterState extends State<PointsCounter> {
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      '$teamBPoints',
-                      style: const TextStyle(
+                    const Text(
+                      '0',
+                      style: TextStyle(
                         fontSize: 160,
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamBPoints++;
-                        });
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -158,11 +132,7 @@ class _PointsCounterState extends State<PointsCounter> {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamBPoints += 2;
-                        });
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -179,11 +149,7 @@ class _PointsCounterState extends State<PointsCounter> {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          teamBPoints += 3;
-                        });
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         minimumSize: const Size(150, 50),
@@ -204,12 +170,7 @@ class _PointsCounterState extends State<PointsCounter> {
               height: 100,
             ),
             ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  teamAPoints = 0;
-                  teamBPoints = 0;
-                });
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
                 minimumSize: const Size(150, 50),
