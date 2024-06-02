@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CounterCubit, GeneralCounterState>(
+    return BlocConsumer<CounterCubit, MainCounterState>(
       listener: (context, state) {
         if (state is ACounterIncrementStat) {
           teamAPoint = BlocProvider.of<CounterCubit>(context).teamAPoints;
