@@ -26,17 +26,15 @@ class HomePage extends StatelessWidget {
   HomePage({
     super.key,
   });
-  int teamAPoint = 0;
-  int teamBPoint = 0;
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CounterCubit, MainCounterState>(
       listener: (context, state) {
         if (state is ACounterIncrementStat) {
-          teamAPoint = BlocProvider.of<CounterCubit>(context).teamAPoints;
+          // teamAPoint = BlocProvider.of<CounterCubit>(context).teamAPoints;
         } else {
-          teamBPoint = BlocProvider.of<CounterCubit>(context).teamBPoints;
+          // teamBPoint = BlocProvider.of<CounterCubit>(context).teamBPoints;
         }
       },
       builder: (context, state) {
@@ -64,13 +62,16 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '$teamAPoint',
+                        '${BlocProvider.of<CounterCubit>(context).teamAPoints}',
                         style: const TextStyle(
                           fontSize: 160,
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: "A", buttonNumber: 1);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
@@ -87,7 +88,10 @@ class HomePage extends StatelessWidget {
                         height: 16,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: 'A', buttonNumber: 2);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
@@ -104,7 +108,10 @@ class HomePage extends StatelessWidget {
                         height: 16,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: 'A', buttonNumber: 3);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
@@ -138,13 +145,16 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '$teamBPoint',
+                        '${BlocProvider.of<CounterCubit>(context).teamBPoints}',
                         style: const TextStyle(
                           fontSize: 160,
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: 'B', buttonNumber: 1);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
@@ -161,7 +171,10 @@ class HomePage extends StatelessWidget {
                         height: 16,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: 'B', buttonNumber: 2);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
@@ -178,7 +191,10 @@ class HomePage extends StatelessWidget {
                         height: 16,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<CounterCubit>(context)
+                              .increment(teamChar: 'B', buttonNumber: 3);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           minimumSize: const Size(150, 50),
